@@ -113,8 +113,8 @@ const wife = { // Using an object to store information about Susy
     }
 };
 
-console.log(husband); // Output the husband object
-console.log(wife); // Output the wife object
+console.table(husband); // Output the husband object
+console.table(wife); // Output the wife object
 
 //Accessing object properties dot notation and template literals
 console.log(`${husband.firstName} ${husband.lastName} is ${husband.age} years old and works in ${husband.job}.`); // Using template literals to access object properties
