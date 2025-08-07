@@ -130,7 +130,7 @@ console.log(p, q, r);
 const { fri: { open, close } } = openingHours
 console.log(open, close);
 
-//rest pattern and parameters - condensing elements into an array
+//rest pattern and parameters - The spread operator is used where we would otherwise write values separated by commas, while the rest pattern is used where we would write variable names separated by commas.
 //spread - on the right side
 const secondArr = [1, 2, ...[3, 4]];
 //Rest - on the left side
@@ -156,3 +156,53 @@ const dip = [23, 5, 7];
 add(...dip)
 
 restaurant.orderPizza('mushrooms', 'peporoni', 'pineapple')
+
+//Can be used on any data type && return any data type 
+//short circuitting-Will return the first truthy value in teh expresion
+console.log(undefined || 0 || '' || "Hello")
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10
+
+restaurant.numGuests = 45
+
+const guest2 = restaurant.numGuests || 10
+
+//AND operator 
+//just like the || operator and will short circut when it senses a false value returned from the expression 
+console.log('Hello' && 23 && null && 'jonas')
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach')
+
+//Nullish coalescing
+restaurant.numGuests = 0
+const guests = restaurant.numGuests || 10;
+//only covers null or undefined to skip and move on to the next element. 
+const correctGuest = resturant.numGuests ?? 10;
+console.log(guestCorrect)
+
+//Logical Assignment Operators 
+
+const rest1 = {
+  name: 'Carpi',
+  numGuest: 20
+}
+
+const rest2 = {
+  name: 'Le Pizza',
+  owner: 'Gerald Smith'
+}
+//return num of guest unless it is false. 
+rest1.numGuest = rest1.numGuest || 10;
+rest2.numGuest = rest2.numGuest || 10;
+
+//|| logical assignment operator, will assign if falsy.  
+rest1.numGuest ||= 10;
+rest2.numGuest ||= 10;
+
+// can use the nullish coalescing which will only covers null or undefined to skip and assign default value.
+rest1.numGuest ??= 10;
+rest2.numGuest ??= 10;
+
+//And assignment follows the same rules but will assign the default value instead of just returning it.  
+rest2.owner &&= 'Unknown'
+rest1.owner &&= 'Unknown'
