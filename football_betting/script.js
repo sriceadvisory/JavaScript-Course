@@ -15,8 +15,7 @@ const game = {
             'Lewandoski',
             'Kimmich',
             'Alaba',
-            'Goretzka',
-            'Davies',
+
         ],
         [
             'Buri',
@@ -33,3 +32,14 @@ const game = {
         ]
     ]
 }
+//Creating an array for each of the player listings
+const [players1, players2] = game.players
+console.log(players1);
+console.log(players2);
+
+//using spread to seperate out the first player as the GK and assigning the rest as fieldplayers.
+const [gk, ...fieldplayers] = players1
+//combining the players using rest
+const allplayers = [...players1, ...players2]
+//Adding subs onto the team sheet
+const teamSheet = [...players1, 'Thiago', 'Coutinho', 'Perisic']
